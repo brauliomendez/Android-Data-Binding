@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,11 +12,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+        <ImageView
+                android:id="@+id/imageView_user"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:set_image="@{ viewModel.profilePicture }"
+                tools:src="@drawable/profile_pic"
+                android:layout_centerInParent="true"/>
+
         <TextView
                 android:id="@+id/textView_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_below="@+id/imageView_user"
+                android:layout_centerHorizontal="true"
                 tools:text="User Name"
                 android:text="@{ viewModel.name }"/>
 

@@ -10,7 +10,9 @@ import com.braulio.example.databinding.viewmodel.UserViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+    private val binding: ActivityMainBinding by lazy {
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+    }
 
     private val viewModel: UserViewModel = UserViewModel(User())
 
