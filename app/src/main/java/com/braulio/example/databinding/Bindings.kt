@@ -19,6 +19,7 @@ object Bindings {
     }
 
     @BindingAdapter("set_adapter_recycler_view")
+    @JvmStatic
     fun configRecyclerView(recyclerView: RecyclerView, adapter: Adapter) {
         recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
         recyclerView.adapter = adapter
