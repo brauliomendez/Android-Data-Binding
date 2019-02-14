@@ -5,12 +5,14 @@ import com.braulio.example.databinding.model.Post
 import com.braulio.example.databinding.model.User
 import com.braulio.example.databinding.view.adapter.Adapter
 
-class UserViewModel(user: User) {
-
-    var adapter: Adapter
+class UserViewModel {
 
     val name: ObservableField<String> = ObservableField("")
     val email: ObservableField<String> = ObservableField("")
+
+    private val user: User = User()
+
+    var adapter: Adapter
 
     init {
         name.set(user.name)
