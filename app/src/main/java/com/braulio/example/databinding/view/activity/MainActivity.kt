@@ -1,4 +1,4 @@
-package com.braulio.example.databinding.view
+package com.braulio.example.databinding.view.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -14,11 +14,9 @@ class MainActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
 
-    private val viewModel: UserViewModel = UserViewModel(User())
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.viewModel = viewModel
+        binding.viewModel = UserViewModel(User())
     }
 
 }

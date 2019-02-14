@@ -8,35 +8,36 @@
 
     </data>
 
-    <RelativeLayout
+    <LinearLayout
+            android:padding="10dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
+            android:gravity="center_horizontal"
             android:layout_height="match_parent">
 
         <ImageView
-                android:id="@+id/imageView_user"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:set_image="@{ viewModel.profilePicture }"
-                tools:src="@drawable/profile_pic"
-                android:layout_centerInParent="true"/>
+                tools:src="@drawable/ic_profile"
+                app:set_image="@{ @drawable/ic_profile }"/>
 
         <TextView
-                android:id="@+id/textView_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageView_user"
-                android:layout_centerHorizontal="true"
                 tools:text="User Name"
                 android:text="@{ viewModel.name }"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView_name"
                 tools:text="user@email.com"
-                android:layout_centerHorizontal="true"
                 android:text="@{ viewModel.email }"/>
 
-    </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_post"/>
+
+    </LinearLayout>
 
 </layout>
