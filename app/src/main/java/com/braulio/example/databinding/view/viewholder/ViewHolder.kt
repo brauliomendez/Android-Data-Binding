@@ -6,7 +6,7 @@ import com.braulio.example.databinding.model.Post
 
 class ViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(post: Post) {
+    fun <T> bind(item: Post) {
         binding.post = post
         binding.executePendingBindings()
     }
