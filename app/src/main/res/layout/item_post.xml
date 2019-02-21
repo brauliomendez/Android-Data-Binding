@@ -3,7 +3,7 @@
 
     <data>
 
-        <variable name="post" type="com.braulio.example.databinding.model.Post"/>
+        <variable name="viewModel" type="com.braulio.example.databinding.viewmodel.PostItemViewModel"/>
 
     </data>
 
@@ -15,19 +15,19 @@
         <TextView
                 android:layout_marginTop="@dimen/spacing_large"
                 android:layout_width="match_parent"
-                android:text="@{ post.title }"
+                android:text="@{ viewModel.title }"
                 android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_marginTop="@dimen/spacing_large"
                 android:layout_width="match_parent"
-                android:text="@{ post.category }"
+                android:text="@{ viewModel.category }"
                 android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_marginTop="@dimen/spacing_large"
                 android:layout_width="match_parent"
-                android:text="@{ post.information }"
+                android:text="@{ viewModel.information }"
                 android:layout_height="wrap_content"/>
 
     </LinearLayout>

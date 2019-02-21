@@ -3,21 +3,21 @@ package com.braulio.example.databinding.viewmodel
 import android.databinding.ObservableField
 import com.braulio.example.databinding.model.Post
 import com.braulio.example.databinding.model.User
-import com.braulio.example.databinding.view.adapter.Adapter
+import com.braulio.example.databinding.view.adapter.MainAdapter
 
 class UserViewModel {
 
     val name: ObservableField<String> = ObservableField("")
     val email: ObservableField<String> = ObservableField("")
 
-    private val user: User = User()
+    val items: List<PostItemViewModel>
 
-    var adapter: Adapter
+    private val user: User = User()
 
     init {
         name.set(user.name)
         email.set(user.email)
-        adapter = Adapter(setPosts())
+        items = setPosts().map { PostItemViewModel(it) }
     }
 
     private fun setPosts(): MutableList<Post> {

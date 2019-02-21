@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/item_post"
-                app:set_adapter_recycler_view="@{ viewModel.adapter }"/>
+                app:set_adapter_recycler_view="@{ viewModel.items }"/>
 
     </LinearLayout>
 
